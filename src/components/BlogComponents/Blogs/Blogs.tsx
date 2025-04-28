@@ -28,7 +28,7 @@ const Blogs = () => {
             date: "10 March",
         }
     ]
-    console.log(currentPage)
+
     return (
         <div className="mt-10 py-7">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">

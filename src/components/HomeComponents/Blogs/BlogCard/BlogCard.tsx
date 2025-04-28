@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { BlogCardType } from "./BlogCardType";
+import Link from "next/link";
 
 
 const BlogCard: React.FC<BlogCardType> = ({ blogCardData }) => {
@@ -13,7 +14,7 @@ const BlogCard: React.FC<BlogCardType> = ({ blogCardData }) => {
                     <h2 className="text-lg font-semibold text-gray-800">{blogCardData.title.slice(0, 30)}{blogCardData.title.length > 30 && "..."}</h2>
                     <p className="py-5 text-gray-500">{blogCardData.description.slice(0, 150)}{blogCardData.description.length > 150 && "..."}</p>
                     <div>
-                        <button className="px-4 py-1.5 rounded-sm bg-[#1ecb15] text-white font-semibold cursor-pointer">Read More</button>
+                        <Link href={`blog/${blogCardData.title}`} className="px-4 py-1.5 rounded-sm bg-[#1ecb15] text-white font-semibold cursor-pointer">Read More</Link>
                     </div>
                 </div>
                 <div className="absolute top-5 left-5 bg-[#1ecb15] text-white py-1 px-2.5 rounded-sm">

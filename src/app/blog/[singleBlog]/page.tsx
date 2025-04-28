@@ -1,33 +1,35 @@
-import Blogs from "@/components/BlogComponents/Blogs/Blogs";
-import SidebarHeader from "@/components/BlogComponents/Sidebar/SidebarHeader/SidebarHeader";
+"use client"
+import SidebarAbout from "@/components/BlogComponents/Sidebar/SidebarAbout/SidebarAbout";
 import SidebarRecentPost from "@/components/BlogComponents/Sidebar/SidebarRecentPost/SidebarRecentPost";
+import SidebarSocialShare from "@/components/BlogComponents/Sidebar/SidebarSocialShare/SidebarSocialShare";
 import SidebarTags from "@/components/BlogComponents/Sidebar/SidebarTags/SidebarTags";
 import PageHeader from "@/components/SharedComponent/PageHeader/PageHeader";
+import { useParams } from "next/navigation";
 
-const page = () => {
+const SingleBlog = () => {
+    const router = useParams();
+    const rawHeading = Array.isArray(router.singleBlog) ? router.singleBlog.join(", ") : router.singleBlog || "Default Heading";
+    const heading = decodeURIComponent(rawHeading.replace(/%20/g, " "));
+
     const pageHeading = {
-        heading: "News & Updates"
+        heading: heading
     }
+
     return (
         <div className="bg-[#ffffff]">
             <PageHeader pageHeaderData={pageHeading} />
             <div className="max-w-[1250px] mx-auto px-4">
                 <div className="flex flex-col md:flex-row gap-8">
                     <div className="w-full md:w-2/3">
-                        <Blogs />
+
                     </div>
                     <div className="w-full md:w-1/3">
                         <div className="mt-10 py-7 flex flex-col gap-8">
+                            <SidebarSocialShare />
                             <SidebarRecentPost />
+                            <SidebarAbout />
                             <SidebarTags />
-                            <div className="py-1">
-                                <SidebarHeader heading="Testimonials" />
-                                <div className="flex flex-col gap-4 flex-wrap">
-
-                                </div>
-                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -35,4 +37,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default SingleBlog;
