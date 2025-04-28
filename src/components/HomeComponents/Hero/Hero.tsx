@@ -1,3 +1,4 @@
+// import ReservationForm from "@/components/SharedComponent/ReservationForm/ReservationForm";
 import HeroForm from "../HeroForm/HeroForm";
 
 const Hero = () => {
@@ -31,6 +32,9 @@ const Hero = () => {
                 </div>
                 <div className="py-10">
                     <HeroForm />
+                </div>
+                <div>
+                    {/* <ReservationForm /> */}
                 </div>
                 <div className="flex flex-col md:flex-row py-5">
                     {

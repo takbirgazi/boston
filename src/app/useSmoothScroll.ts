@@ -16,7 +16,7 @@ const useSmoothScroll = () => {
             event.preventDefault();
             const delta: number = event.deltaY || event.detail || event.wheelDelta || 0;
             window.scrollBy({
-            top: delta * 5,
+            top: delta * 3,
             behavior: 'smooth',
             });
         };
