@@ -1,5 +1,4 @@
 import Blogs from "@/components/BlogComponents/Blogs/Blogs";
-import SidebarHeader from "@/components/BlogComponents/Sidebar/SidebarHeader/SidebarHeader";
 import SidebarRecentPost from "@/components/BlogComponents/Sidebar/SidebarRecentPost/SidebarRecentPost";
 import SidebarTags from "@/components/BlogComponents/Sidebar/SidebarTags/SidebarTags";
 import PageHeader from "@/components/SharedComponent/PageHeader/PageHeader";
@@ -20,12 +19,6 @@ const page = () => {
                         <div className="mt-10 py-7 flex flex-col gap-8">
                             <SidebarRecentPost />
                             <SidebarTags />
-                            <div className="py-1">
-                                <SidebarHeader heading="Testimonials" />
-                                <div className="flex flex-col gap-4 flex-wrap">
-
-                                </div>
-                            </div>
                         </div>
 
                     </div>
