@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { FaCalendarAlt } from "react-icons/fa";
 import SidebarHeader from "../SidebarHeader/SidebarHeader";
+import Link from "next/link";
 
 const SidebarRecentPost = () => {
     const blogs = [
@@ -38,7 +39,9 @@ const SidebarRecentPost = () => {
                             <Image className="h-full w-full object-cover" src={blog.image} alt={blog.title} height={100} width={100} />
                         </figure>
                         <div className="flex flex-col gap-2">
-                            <h2 className="font-semibold font-lato text-gray-800">{blog.title}</h2>
+                            <h2 className="font-semibold font-lato text-gray-800">
+                                <Link href={`/blog/${blog.title}`} >{blog.title}</Link>
+                            </h2>
                             <p className="flex gap-2 items-center">
                                 <FaCalendarAlt className="text-[#1ecb15] text-xs" />
                                 <span className="text-gray-700 text-xs font-medium font-lato">{blog.date}, 2022</span>
